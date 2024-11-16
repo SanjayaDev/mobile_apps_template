@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <title>Mobile Sidebar</title>
+  <style>
+    .mobile-container {
+      max-width: 400px;
+      margin: 0 auto;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bottom-nav {
+      box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      padding: 10px 0;
+      background-color: #fff;
+    }
+
+    .bottom-nav a {
+      flex: 1;
+      text-align: center;
+      color: #6c757d;
+    }
+
+    .bottom-nav a.active {
+      color: #0d6efd;
+    }
+
+    /* Middle button */
+    .bottom-nav .middle-button {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #007bff;
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .content {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    /* Sidebar Style */
+    .offcanvas-start {
+      width: 70% !important;
+    }
+
+    .offcanvas-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .offcanvas-body {
+      padding: 1rem;
+    }
+
+    .offcanvas-body ul {
+      padding-left: 0;
+    }
+
+    .offcanvas-body li {
+      list-style: none;
+      padding: 10px 0;
+    }
+
+    .offcanvas-body li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .offcanvas-body li a:hover {
+      color: #0d6efd;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+
+  <div class="mobile-container">
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <button class="btn btn-primary me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+          aria-controls="sidebar">
+          <i class="bi bi-list"></i> <!-- Hamburger Icon -->
+        </button>
+        <a class="navbar-brand" href="#">CatatPro</a>
+      </div>
+    </nav>
+
+    <!-- Sidebar (Offcanvas) -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul>
+          <li><a href="#"><i class="bi bi-person-circle"></i> Akun</a></li>
+          <li><a href="#"><i class="bi bi-gear"></i> Pengaturan</a></li>
+          <li><a href="#"><i class="bi bi-folder"></i> Ekspor Data</a></li>
+          <li><a href="#"><i class="bi bi-trash"></i> Hapus Data</a></li>
+          <hr>
+          <li><a href="#"><i class="bi bi-info-circle"></i> Tentang Kami</a></li>
+          <li><a href="#"><i class="bi bi-shield-lock"></i> Kebijakan Privasi</a></li>
+          <li><a href="#"><i class="bi bi-question-circle"></i> Bantuan</a></li>
+          <li><a href="#"><i class="bi bi-box-arrow-right"></i> Sign Out</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="content p-3">
+      <h1 class="text-center">Welcome!</h1>
+      <p class="text-center">Sidebar seperti yang kamu minta, gw! 😎</p>
+    </main>
+
+    <!-- Bottom Navigation (3 Items only) -->
+    <nav class="navbar navbar-light bg-light bottom-nav d-flex">
+      <a href="#" class="active">
+        <i class="bi bi-house-door-fill fs-4"></i>
+      </a>
+      <div class="middle-button">
+        <i class="bi bi-plus"></i> <!-- Add button in the center -->
+      </div>
+      <a href="#">
+        <i class="bi bi-bell fs-4"></i>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
